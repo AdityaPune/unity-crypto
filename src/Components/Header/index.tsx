@@ -57,7 +57,10 @@ function Header({ handleDrawerToggle, drawe }: IHeader) {
 
   return (
     // <div className={`${classes.topBar} ${!drawe && classes.topBarShift}`}>
-    <AppBar className="appbar" style={{ background: "#fff", height: "70px" }}>
+    <AppBar
+      className="appbar"
+      style={{ background: "#151419", height: "70px" }}
+    >
       <Toolbar disableGutters className="dapp-topbar">
         <div>
           <img src={Casten} alt="Casten Logo" className="casten-logo" />

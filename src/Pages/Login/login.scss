@@ -1,0 +1,27 @@
+.login-view {
+  width: 90%;
+  margin: auto;
+  margin-top: 64px;
+  .login-header {
+    margin: 15px 10px;
+    .title {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 14px;
+      /* identical to box height, or 58% */
+      color: #000000;
+    }
+  }
+  .protocol-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .stat-box {
+      width: 30rem;
+      height: 60rem;
+      margin: 20px;
+    }
+  }
+}

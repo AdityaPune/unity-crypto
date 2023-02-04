@@ -14,32 +14,20 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function createData(
-  secId: string,
-  secName: string,
+  poolName: string,
+  sectorName: string,
   apy: string,
-  frequency: string,
   maturity: string,
-  issuer: string,
-  totalIssuance: string,
-  availableIssuance: string,
-  category: string,
-  ltv: string,
-  leverage: string,
-  moreInfo: string
+  poolAmountAvailable: string,
+  minInvestment: string
 ) {
   return {
-    secId,
-    secName,
+    poolName,
+    sectorName,
     apy,
-    frequency,
     maturity,
-    issuer,
-    totalIssuance,
-    availableIssuance,
-    category,
-    ltv,
-    leverage,
-    moreInfo,
+    poolAmountAvailable,
+    minInvestment,
   };
 }
 
@@ -52,18 +40,36 @@ function ProductList() {
 
   const rows = [
     createData(
-      "FTECHSR420",
-      "A Fintech SR 11% 2023",
+      "UC-210",
+      "Agriculture",
       "11.21%",
       "Monthly",
-      "Dec 23",
-      "Cauris Finance",
-      "$5MM",
-      "$1.2MM",
-      "Revenue based/Invoice Discounting",
-      "0.8",
-      "3.0",
-      "Details"
+      "$1,200,000",
+      "$1000"
+    ),
+    createData(
+      "UC-90",
+      "Home Loans",
+      "13.06%",
+      "Monthly",
+      "$15,800,000",
+      "$3000"
+    ),
+    createData(
+      "UC-1111",
+      "Pharmaceutical",
+      "11.21%",
+      "Monthly",
+      "$4,500,000",
+      "$1500"
+    ),
+    createData(
+      "UC-1738",
+      "Retail",
+      "11.21%",
+      "Monthly",
+      "$11,200,000",
+      "$3000"
     ),
   ];
   return (
@@ -71,44 +77,30 @@ function ProductList() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table" className="table">
         <TableHead className="table-head">
           <TableRow className="head-row">
-            <TableCell className="head-cell">Token ID</TableCell>
-            <TableCell className="head-cell">Token Name</TableCell>
+            <TableCell className="head-cell">Pool</TableCell>
+            <TableCell className="head-cell">Sector</TableCell>
             <TableCell className="head-cell">APY</TableCell>
             <TableCell className="head-cell">Frequency</TableCell>
-            <TableCell className="head-cell">Maturity</TableCell>
-            <TableCell className="head-cell">Borrower</TableCell>
-            <TableCell className="head-cell">Total Issuance</TableCell>
-            <TableCell className="head-cell">Available Issuance</TableCell>
-            <TableCell className="head-cell">Category</TableCell>
-            <TableCell className="head-cell">LTV</TableCell>
-            <TableCell className="head-cell">Leverage</TableCell>
-            <TableCell className="head-cell">More Info</TableCell>
+            <TableCell className="head-cell">Liquidity Needed</TableCell>
+            <TableCell className="head-cell">Minimum Investment</TableCell>
           </TableRow>
         </TableHead>
         <TableBody className="table-body">
           {rows.map((row) => (
             <TableRow
-              key={row.secId}
+              key={row.poolName}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               onClick={navigateToTokenOfferings}
               className="body-row"
             >
               <TableCell component="th" scope="row">
-                {row.secId}
+                {row.poolName}
               </TableCell>
-              <TableCell>{row.secName}</TableCell>
+              <TableCell>{row.sectorName}</TableCell>
               <TableCell>{row.apy}</TableCell>
-              <TableCell>{row.frequency}</TableCell>
               <TableCell>{row.maturity}</TableCell>
-              <TableCell>{row.issuer}</TableCell>
-              <TableCell>{row.totalIssuance}</TableCell>
-              <TableCell>{row.availableIssuance}</TableCell>
-              <TableCell>{row.category}</TableCell>
-              <TableCell>{row.ltv}</TableCell>
-              <TableCell>{row.leverage}</TableCell>
-              <TableCell className="special-cell">
-                <div className="button">{row.moreInfo}</div>
-              </TableCell>
+              <TableCell>{row.poolAmountAvailable}</TableCell>
+              <TableCell>{row.minInvestment}</TableCell>
             </TableRow>
           ))}
         </TableBody>

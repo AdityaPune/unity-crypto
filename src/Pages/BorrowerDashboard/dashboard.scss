@@ -1,0 +1,40 @@
+.dashboard-view {
+  width: 90%;
+  margin: auto;
+  margin-top: 64px;
+
+  .dashboard-header {
+    margin: 15px 10px;
+    .title {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 14px;
+      /* identical to box height, or 58% */
+
+      color: #000000;
+    }
+  }
+
+  .add-button {
+    background: #ffffff;
+    border: 1px solid rgba(28, 163, 174, 0.2);
+    border-radius: 6px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 18px;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+
+    .add-button-text {
+      color: black;
+      font-weight: 500;
+    }
+  }
+}

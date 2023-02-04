@@ -54,13 +54,13 @@ function NavContent() {
 
         <div
           className={
-            active === "token" ? "dapp-menu-item-special" : "dapp-menu-item"
+            active === "invest" ? "dapp-menu-item-special" : "dapp-menu-item"
           }
-          onClick={() => navigateToPage("/token")}
+          onClick={() => navigateToPage("/invest")}
         >
           <SecurityIcon />
-          <p className={active === "token" ? "text-special" : "text"}>
-            Token Offerings
+          <p className={active === "invest" ? "text-special" : "text"}>
+            Invest
           </p>
         </div>
       </div>

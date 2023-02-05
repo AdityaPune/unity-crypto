@@ -5,6 +5,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import WalletConnect from "../Commons/WalletConnect";
 import Casten from "../../assets/icons/Casten.png";
+import logo from "../../assets/images/logo.jpg"
 import "./header.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store";
@@ -37,8 +38,8 @@ function Header({ handleDrawerToggle, drawe }: IHeader) {
       style={{ background: "#151419", height: "70px" }}
     >
       <Toolbar disableGutters className="dapp-topbar">
-        <div>
-          <img src={Casten} alt="Casten Logo" className="casten-logo" />
+        <div style={{ padding:"10px"}}>
+          <img src={logo} style={{height:"56px", width:"96px"}}alt="Casten Logo" className="casten-logo" />
         </div>
         <div className="dapp-items">
           {address && (

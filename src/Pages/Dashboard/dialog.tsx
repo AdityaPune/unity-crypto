@@ -59,11 +59,12 @@ export interface poolProps {
   id: number;
   name: string;
   summary: string;
+  img:string
 }
 
 export default function CustomizedDialogs(pool: poolProps) {
   const [open, setOpen] = React.useState(false);
-  const { name, summary, id } = pool;
+  const { name, summary, id, img } = pool;
   //   console.log(name);
   const handleClickOpen = () => {
     setOpen(true);

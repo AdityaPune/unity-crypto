@@ -24,11 +24,15 @@ function BorrowerDashboard() {
   return (
     <div className="dashboard-view">
       <div className="dashboard-header">
-        <Typography className="title">Your Loans</Typography>
+        <Typography style={{ color: "#3939BF" }} className="title">
+          Your Loans
+        </Typography>
       </div>
-      <div className="add-button" onClick={()=>setShowContent(!showContent)}><p className="add-button-text">Sanction New Loan</p></div>
+      <div className="add-button" onClick={() => setShowContent(!showContent)}>
+        <p className="add-button-text">Sanction New Loan</p>
+      </div>
       <br></br>
-      {showContent &&  (<SanctionLoan/>)}
+      {showContent && <SanctionLoan />}
     </div>
   );
 }

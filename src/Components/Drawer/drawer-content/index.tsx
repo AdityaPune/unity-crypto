@@ -24,7 +24,10 @@ function NavContent() {
   return (
     <div className="dapp-sidebar">
       <div className="dapp-nav">
-        <div className="dapp-menu-item" onClick={() => navigateToPage("/")}>
+        <div
+          className="dapp-menu-item"
+          onClick={() => navigateToPage("/dashboard")}
+        >
           <DashboardIcon />
           <p className={active === "" ? "text-special" : "text"}>Dashboard</p>
         </div>
@@ -54,13 +57,13 @@ function NavContent() {
 
         <div
           className={
-            active === "token" ? "dapp-menu-item-special" : "dapp-menu-item"
+            active === "invest" ? "dapp-menu-item-special" : "dapp-menu-item"
           }
-          onClick={() => navigateToPage("/token")}
+          onClick={() => navigateToPage("/invest")}
         >
           <SecurityIcon />
-          <p className={active === "token" ? "text-special" : "text"}>
-            Token Offerings
+          <p className={active === "invest" ? "text-special" : "text"}>
+            Invest
           </p>
         </div>
       </div>

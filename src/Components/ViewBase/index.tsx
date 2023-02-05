@@ -33,7 +33,11 @@ function ViewBase({ children }: IViewBaseProps) {
       {location.pathname !== "/" && (
         <div className="drawer">
           <Box
-            sx={{ display: { xs: "block", sm: "none" }, zIndex: 0 }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              zIndex: 0,
+              background: "#151419",
+            }}
             className="sidebar"
           >
             <MobileDrawer
@@ -42,7 +46,11 @@ function ViewBase({ children }: IViewBaseProps) {
             />
           </Box>
           <Box
-            sx={{ display: { xs: "none", sm: "block" }, zIndex: 0 }}
+            sx={{
+              display: { xs: "none", sm: "block" },
+              zIndex: 0,
+              backgroundColor: "#151419",
+            }}
             className="sidebar"
           >
             <Drawer />

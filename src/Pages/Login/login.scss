@@ -1,0 +1,41 @@
+.login-view {
+  width: 90%;
+  margin: auto;
+  margin-top: 64px;
+  .protocol-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .stat-box {
+      width: 500px;
+      height: 400px;
+      margin: 20px;
+      display: "flex";
+      flex-direction: "column";
+      align-items: "center";
+      justify-content: "center";
+      .card-style {
+        background: "#151419";
+        border: "3px solid rgba(28, 163, 174, 0.2)";
+        border-radius: "5px";
+        height: "250px";
+        display: "flex";
+        flex-direction: "column";
+        align-items: "center";
+        justify-content: "center";
+        cursor: "pointer";
+      }
+      .card-style:hover {
+        background: "#0E5B5F";
+        border: "3px solid rgba(28, 163, 174, 0.2)";
+        border-radius: "5px";
+        height: "250px";
+        display: "flex";
+        flex-direction: "column";
+        align-items: "center";
+        justify-content: "center";
+        cursor: "pointer";
+      }
+    }
+  }
+}

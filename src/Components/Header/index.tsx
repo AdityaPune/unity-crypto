@@ -16,31 +16,6 @@ interface IHeader {
   drawe: boolean;
 }
 
-// const useStyles = makeStyles((theme: Theme) => ({
-//   appBar: {
-//     [theme.breakpoints.up("sm")]: {
-//       width: "100%",
-//     },
-//     justifyContent: "space-between",
-//     alignItems: "space-between",
-//     background: "transparent",
-//     backdropFilter: "none",
-//     zIndex: 10,
-//   },
-//   topBar: {
-//     transition: theme.transitions.create("margin", {
-//       easing: theme.transitions.easing.sharp,
-//       duration: TRANSITION_DURATION,
-//     }),
-//   },
-//   topBarShift: {
-//     transition: theme.transitions.create("margin", {
-//       easing: theme.transitions.easing.easeOut,
-//       duration: TRANSITION_DURATION,
-//     }),
-//     marginLeft: 0,
-//   },
-// }));
 function Header({ handleDrawerToggle, drawe }: IHeader) {
   // const classes = useStyles();
   const isVerySmallScreen = useMediaQuery("(max-width: 400px)");
@@ -57,7 +32,10 @@ function Header({ handleDrawerToggle, drawe }: IHeader) {
 
   return (
     // <div className={`${classes.topBar} ${!drawe && classes.topBarShift}`}>
-    <AppBar className="appbar" style={{ background: "#fff", height: "70px" }}>
+    <AppBar
+      className="appbar"
+      style={{ background: "#151419", height: "70px" }}
+    >
       <Toolbar disableGutters className="dapp-topbar">
         <div>
           <img src={Casten} alt="Casten Logo" className="casten-logo" />

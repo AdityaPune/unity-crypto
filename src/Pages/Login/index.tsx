@@ -126,6 +126,10 @@ function Login() {
     navigate(route);
   };
 
+  useEffect(() => {
+    localStorage.setItem("borrower", "");
+  }, []);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -135,6 +139,10 @@ function Login() {
     });
   };
   const [borrowReg, setBorrowReg] = useState(false);
+  const signedup =()=>{
+    localStorage.setItem("borrower", "true");
+    navigateToPage("/borrowerDash");
+  }
   const card = (text: string) => (
     <CardContent>
       <Box
@@ -161,7 +169,11 @@ function Login() {
             InputLabelProps={{
               className: styles.input,
             }}
+<<<<<<< HEAD
             className={styles.input}
+=======
+            sx={{ input: { color: "white" } }}
+>>>>>>> 1c4d21de2f29c6675a6e13d45b62fba806a0cf52
             // InputProps={{
             //   classes: { notchedOutline: classes.specialOutline },
             // }}
@@ -178,7 +190,11 @@ function Login() {
             InputLabelProps={{
               style: { color: "#fff" },
             }}
+<<<<<<< HEAD
             style={{ color: "#fff" }}
+=======
+            sx={{ input: { color: "white" } }}
+>>>>>>> 1c4d21de2f29c6675a6e13d45b62fba806a0cf52
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -194,7 +210,7 @@ function Login() {
               sx={{ mt: 3, mb: 2 }}
               // labelStyle={{ fontSize: "63px" }}
               // style={{ color: "rgb(230, 179, 82)" }}
-              onClick={() => navigateToPage("/borrowerDash")}
+              onClick={signedup}
             >
               Sign In
             </Button>
@@ -319,6 +335,7 @@ function Login() {
                   InputLabelProps={{
                     style: { color: "#fff" },
                   }}
+                  sx={{ input: { color: "white" } }}
                 />
                 <TextField
                   margin="normal"
@@ -332,6 +349,7 @@ function Login() {
                   InputLabelProps={{
                     style: { color: "#fff" },
                   }}
+                  sx={{ input: { color: "white" } }}
                 />
                 <TextField
                   margin="normal"
@@ -345,6 +363,7 @@ function Login() {
                   InputLabelProps={{
                     style: { color: "#fff" },
                   }}
+                  sx={{ input: { color: "white" } }}
                 />
                 <TextField
                   margin="normal"
@@ -358,6 +377,7 @@ function Login() {
                   InputLabelProps={{
                     style: { color: "#fff" },
                   }}
+                  sx={{ input: { color: "white" } }}
                 />
                 <ThemeProvider theme={theme}>
                   <Button

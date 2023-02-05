@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 function BorrowerDashboard() {
-  const card = (text: string, num: number) => (
+
+  const card = (text: string, num:string) => (
     <CardContent>
       <Typography style={{ color: "rgb(230,179,82)", fontFamily: "OpenSans" }}>
         {text}
@@ -101,55 +102,50 @@ function BorrowerDashboard() {
     <div className="dashboard-view">
       <div className="dashboard-header">
         <div className="numbers">
-          <div className="protocol-stats">
-            <Box className="stat-box">
-              <Card
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #4880EC, #019CAD)",
-                }}
-                variant="outlined"
-              >
-                {card("Total Loan Sanctioned", 0)}
-              </Card>
-            </Box>
-            <Box className="stat-box">
-              <Card
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #4880EC, #019CAD)",
-                }}
-                variant="outlined"
-              >
-                {card("Total interest paid", 0)}
-              </Card>
-            </Box>
-          </div>
-          <div className="personal-stats">
-            <Box className="stat-box">
-              <Card
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #4880EC, #019CAD)",
-                }}
-                variant="outlined"
-              >
-                {card("Interest due next month", 0)}
-              </Card>
-            </Box>
-            <Box className="stat-box">
-              <Card
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #4880EC, #019CAD)",
-                }}
-                variant="outlined"
-                className="card"
-              >
-                {card("Particiapted pools", 2)}
-              </Card>
-            </Box>
-          </div>
+        <div className="protocol-stats">
+          <Box className="stat-box">
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+            >
+              {card("Total Loan Sanctioned","$120000")}
+            </Card>
+          </Box>
+          <Box className="stat-box">
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+            >
+              {card("Total interest paid","$1500")}
+            </Card>
+          </Box>
+        </div>
+        <div className="personal-stats">
+          <Box className="stat-box">
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+            >
+              {card("Interest due next month","$1000")}
+            </Card>
+          </Box>
+          <Box className="stat-box">
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+              className="card"
+            >
+              {card("Particiapted pools","2")}
+            </Card>
+          </Box>
         </div>
         {/* <Typography style={{ color: "#3939BF" }} className="title">
           Your Loans

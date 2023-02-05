@@ -66,7 +66,7 @@ export default function AddressForm() {
   const theme = useTheme();
   const [sectorName, setsectorName] = React.useState<string[]>([]);
 
-  const handleChangeSelect = (event: SelectChangeEvent<typeof sectorName>) => {
+  const handleChangeSector = (event: SelectChangeEvent<typeof sectorName>) => {
     const {
       target: { value },
     } = event;
@@ -127,17 +127,16 @@ export default function AddressForm() {
             variant="standard"
           />
         </Grid>
-        <Grid xs={12} sm={6}>
+        <Grid xs={12} sm={6} style={{marginTop:"6px"}} >
         <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-checkbox-label">Sector</InputLabel>
+        <InputLabel id="demo-multiple-name-label">Sector</InputLabel>
         <Select
-        style={{minWidth: 250, margin:"15px"}}
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           multiple
           value={sectorName}
-          onChange={handleChangeSelect}
-          input={<OutlinedInput label="Sector" />}
+          onChange={handleChangeSector}
+          input={<OutlinedInput label="Name" />}
           MenuProps={MenuProps}
         >
           {sectors.map((name) => (
@@ -150,7 +149,7 @@ export default function AddressForm() {
             </MenuItem>
           ))}
         </Select>
-        </FormControl>
+      </FormControl>
         </Grid>
       </Grid>
     </React.Fragment>

@@ -55,30 +55,28 @@ export const data = {
   ],
 };
 
-
-
 function Dashboard() {
   const dispatch = useDispatch();
 
-   const card = (text: string, num: string) => (
-     <CardContent>
-       <Typography style={{ color: "rgb(230,179,82)", fontFamily: "OpenSans" }}>
-         {text}
-       </Typography>
-       {num ? (
-         <Typography style={{ color: "white" }} variant="h5" component="div">
-           {num}
-         </Typography>
-       ) : (
-         <Typography style={{ color: "white" }} variant="h5" component="div">
-           $12,000,000.00
-         </Typography>
-       )}
-       {/* <Typography style={{color:"white"}} variant="h5" component="div">
+  const card = (text: string, num: string) => (
+    <CardContent>
+      <Typography style={{ color: "rgb(230,179,82)", fontFamily: "OpenSans" }}>
+        {text}
+      </Typography>
+      {num ? (
+        <Typography style={{ color: "white" }} variant="h5" component="div">
+          {num}
+        </Typography>
+      ) : (
+        <Typography style={{ color: "white" }} variant="h5" component="div">
+          $12,000,000.00
+        </Typography>
+      )}
+      {/* <Typography style={{color:"white"}} variant="h5" component="div">
         $12,000,000.00
       </Typography> */}
-     </CardContent>
-   );
+    </CardContent>
+  );
 
   const pooldata = [
     {
@@ -119,17 +117,17 @@ function Dashboard() {
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
             >
-              {card("Total Value Locked","$1500000")}
+              {card("Total Value Locked", "$1500000")}
             </Card>
           </Box>
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
             >
@@ -141,7 +139,7 @@ function Dashboard() {
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
             >
@@ -151,12 +149,12 @@ function Dashboard() {
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
               className="card"
             >
-              {card("USDC Locked","$145000")}
+              {card("USDC Locked", "$145000")}
             </Card>
           </Box>
         </div>

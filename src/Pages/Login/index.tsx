@@ -112,6 +112,9 @@ const useStyles = makeStyles({
     borderColor: "pink",
     borderWidth: 4,
   },
+  input: {
+    color: "#fff",
+  },
 });
 
 function Login() {
@@ -136,10 +139,10 @@ function Login() {
     });
   };
   const [borrowReg, setBorrowReg] = useState(false);
-  const signedup =()=>{
+  const signedup = () => {
     localStorage.setItem("borrower", "true");
     navigateToPage("/borrowerDash");
-  }
+  };
   const card = (text: string) => (
     <CardContent>
       <Box
@@ -147,6 +150,7 @@ function Login() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          color: "#fff",
         }}
       >
         <Typography style={{ color: "#3939BF" }} component="h1" variant="h5">
@@ -163,7 +167,7 @@ function Login() {
             autoComplete="email"
             autoFocus
             InputLabelProps={{
-              style: { color: "#fff" },
+              className: styles.input,
             }}
             sx={{ input: { color: "white" } }}
             // InputProps={{

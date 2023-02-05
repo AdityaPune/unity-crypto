@@ -25,11 +25,15 @@ function NavContent() {
     <div className="dapp-sidebar">
       <div className="dapp-nav">
         <div
-          className="dapp-menu-item"
+          className={
+            active === "dashboard" ? "dapp-menu-item-special" : "dapp-menu-item"
+          }
           onClick={() => navigateToPage("/dashboard")}
         >
           <DashboardIcon />
-          <p className={active === "" ? "text-special" : "text"}>Dashboard</p>
+          <p className={active === "dashboard" ? "text-special" : "text"}>
+            Dashboard
+          </p>
         </div>
         <div
           className={

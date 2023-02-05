@@ -80,45 +80,43 @@ function Invest() {
 
   return (
     <div className="security-view">
-      <>
-        <TableContainer component={Paper} className="table-container">
-          <Table
-            sx={{ minWidth: 650 }}
-            aria-label="simple table"
-            className="table"
-          >
-            <TableHead className="table-head">
-              <TableRow className="head-row">
-                <TableCell className="head-cell">Pool</TableCell>
-                <TableCell className="head-cell">Sector</TableCell>
-                <TableCell className="head-cell">APY</TableCell>
-                <TableCell className="head-cell">Frequency</TableCell>
-                <TableCell className="head-cell">Liquidity Needed</TableCell>
-                <TableCell className="head-cell">Minimum Investment</TableCell>
+      <TableContainer component={Paper} className="table-container">
+        <Table
+          sx={{ minWidth: 650 }}
+          aria-label="simple table"
+          className="table"
+        >
+          <TableHead className="table-head">
+            <TableRow className="head-row">
+              <TableCell className="head-cell">Pool</TableCell>
+              <TableCell className="head-cell">Sector</TableCell>
+              <TableCell className="head-cell">APY</TableCell>
+              <TableCell className="head-cell">Frequency</TableCell>
+              <TableCell className="head-cell">Liquidity Needed</TableCell>
+              <TableCell className="head-cell">Minimum Investment</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody className="table-body">
+            {rows.map((row) => (
+              <TableRow
+                key={row.poolName}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                // onClick={navigateToTokenOfferings}
+                className="body-row"
+              >
+                <TableCell component="th" scope="row">
+                  {row.poolName}
+                </TableCell>
+                <TableCell>{row.sectorName}</TableCell>
+                <TableCell>{row.apy}</TableCell>
+                <TableCell>{row.maturity}</TableCell>
+                <TableCell>{row.poolAmountAvailable}</TableCell>
+                <TableCell>{row.minInvestment}</TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody className="table-body">
-              {rows.map((row) => (
-                <TableRow
-                  key={row.poolName}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  // onClick={navigateToTokenOfferings}
-                  className="body-row"
-                >
-                  <TableCell component="th" scope="row">
-                    {row.poolName}
-                  </TableCell>
-                  <TableCell>{row.sectorName}</TableCell>
-                  <TableCell>{row.apy}</TableCell>
-                  <TableCell>{row.maturity}</TableCell>
-                  <TableCell>{row.poolAmountAvailable}</TableCell>
-                  <TableCell>{row.minInvestment}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 }

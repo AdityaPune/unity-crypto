@@ -34,10 +34,7 @@ function NavContent() {
             onClick={() => navigateToPage("/borrowerDash")}
           >
             <DashboardIcon color="primary" />
-            <p
-              style={{ color: "rgb(230,179,82)" }}
-              className={active === "" ? "text-special" : "text"}
-            >
+            <p className={active === "dashboard" ? "text-special" : "text"}>
               Dashboard
             </p>
           </div>
@@ -51,12 +48,7 @@ function NavContent() {
             onClick={() => navigateToPage("/dashboard")}
           >
             <DashboardIcon color="primary" />
-            <p
-              style={{ color: "rgb(230,179,82)" }}
-              className={active === "" ? "text-special" : "text"}
-            >
-              Dashboard
-            </p>
+            <p className={active === "" ? "text-special" : "text"}>Dashboard</p>
           </div>
         )}
 
@@ -70,10 +62,7 @@ function NavContent() {
             onClick={() => navigateToPage("/portfolio")}
           >
             <DataThresholdingIcon color="primary" />
-            <p
-              style={{ color: "rgb(230,179,82)" }}
-              className={active === "portfolio" ? "text-special" : "text"}
-            >
+            <p className={active === "portfolio" ? "text-special" : "text"}>
               Portfolio Manager
             </p>
           </div>
@@ -89,10 +78,7 @@ function NavContent() {
             onClick={() => navigateToPage("/borrower")}
           >
             <Person2Icon color="primary" />
-            <p
-              style={{ color: "rgb(230,179,82)" }}
-              className={active === "borrower" ? "text-special" : "text"}
-            >
+            <p className={active === "borrower" ? "text-special" : "text"}>
               Borrower Profile
             </p>
           </div>
@@ -106,10 +92,7 @@ function NavContent() {
             onClick={() => navigateToPage("/invest")}
           >
             <CurrencyExchangeIcon color="primary" />
-            <p
-              style={{ color: "rgb(230,179,82)" }}
-              className={active === "invest" ? "text-special" : "text"}
-            >
+            <p className={active === "invest" ? "text-special" : "text"}>
               Invest
             </p>
           </div>

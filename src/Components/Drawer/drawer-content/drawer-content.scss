@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: #151419;
-  margin-top: 100px;
+  margin-top: 75px;
   z-index: 0;
   .dapp-nav {
     display: flex;
@@ -44,7 +44,7 @@
       justify-content: flex-start;
       align-items: center;
 
-      background-color: #cee9eb;
+      background-color: rgba(230, 179, 82);
       border-radius: 8px;
       padding: 0px 8px;
       width: 100%;

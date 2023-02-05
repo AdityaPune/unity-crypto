@@ -23,7 +23,9 @@ function NavContent() {
     <div className="dapp-sidebar">
       <div className="dapp-nav">
         <div
-          className="dapp-menu-item"
+          className={
+            active === "dashboard" ? "dapp-menu-item-special" : "dapp-menu-item"
+          }
           onClick={() => navigateToPage("/dashboard")}
         >
           <DashboardIcon color="primary" />

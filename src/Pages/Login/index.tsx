@@ -93,11 +93,7 @@ const useStyles = makeStyles({
     },
   },
   papertwo: {
-<<<<<<< HEAD
     background: "rgba(230,179,82)!important",
-=======
-    background: "rgba(230,179,82) !important",
->>>>>>> 2f3179f63ed4557e1772e75ebe4a66352127619e
     border: "5px solid #fff !important",
     borderRadius: "15px",
     height: "250px",

@@ -112,6 +112,9 @@ const useStyles = makeStyles({
     borderColor: "pink",
     borderWidth: 4,
   },
+  input: {
+    color: "#fff",
+  },
 });
 
 function Login() {
@@ -139,6 +142,7 @@ function Login() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          color: "#fff",
         }}
       >
         <Typography style={{ color: "#3939BF" }} component="h1" variant="h5">
@@ -155,8 +159,9 @@ function Login() {
             autoComplete="email"
             autoFocus
             InputLabelProps={{
-              style: { color: "#fff" },
+              className: styles.input,
             }}
+            className={styles.input}
             // InputProps={{
             //   classes: { notchedOutline: classes.specialOutline },
             // }}
@@ -173,6 +178,7 @@ function Login() {
             InputLabelProps={{
               style: { color: "#fff" },
             }}
+            style={{ color: "#fff" }}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}

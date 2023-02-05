@@ -122,19 +122,12 @@ function Invest() {
     createData(
       "UC-1111",
       "Pharmaceutical",
-      "11.21%",
+      "10.33%",
       "Monthly",
       "$4,500,000",
       "$1500"
     ),
-    createData(
-      "UC-1738",
-      "Retail",
-      "11.21%",
-      "Monthly",
-      "$11,200,000",
-      "$3000"
-    ),
+    createData("UC-1738", "Retail", "8.48%", "Monthly", "$11,200,000", "$3000"),
   ];
 
   const [value, setValue] = useState("");

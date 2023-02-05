@@ -55,18 +55,16 @@ export const data = {
   ],
 };
 
-
-
 function Dashboard() {
   const dispatch = useDispatch();
 
-  const card = (text: string) => (
+  const card = (text: string, amount: string) => (
     <CardContent>
       <Typography style={{ color: "rgb(230,179,82)", fontFamily: "OpenSans" }}>
         {text}
       </Typography>
-      <Typography style={{color:"white"}} variant="h5" component="div">
-        $12,000,000.00
+      <Typography style={{ color: "white" }} variant="h5" component="div">
+        {amount}
       </Typography>
     </CardContent>
   );
@@ -110,21 +108,21 @@ function Dashboard() {
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
             >
-              {card("Total Value Locked")}
+              {card("Total Value Locked", "12,000,000")}
             </Card>
           </Box>
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
             >
-              {card("Loan Originated")}
+              {card("Loan Originated", "4,500,000")}
             </Card>
           </Box>
         </div>
@@ -132,22 +130,22 @@ function Dashboard() {
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
             >
-              {card("Portfolio Balance")}
+              {card("Portfolio Balance", "767,000")}
             </Card>
           </Box>
           <Box className="stat-box">
             <Card
               style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+                background: "#1B202A",
               }}
               variant="outlined"
               className="card"
             >
-              {card("USDC Locked")}
+              {card("USDC Locked", "410,000")}
             </Card>
           </Box>
         </div>

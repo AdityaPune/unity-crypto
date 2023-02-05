@@ -30,8 +30,8 @@ function NavContent() {
         >
           <DashboardIcon color="primary" />
           <p
-            style={{ color: "rgb(230,179,82)" }}
-            className={active === "" ? "text-special" : "text"}
+            // style={{ color: "rgb(230,179,82)" }}
+            className={active === "dashboard" ? "text-special" : "text"}
           >
             Dashboard
           </p>
@@ -44,14 +44,14 @@ function NavContent() {
         >
           <DataThresholdingIcon color="primary" />
           <p
-            style={{ color: "rgb(230,179,82)" }}
+            // style={{ color: "rgb(230,179,82)" }}
             className={active === "portfolio" ? "text-special" : "text"}
           >
             Portfolio Manager
           </p>
         </div>
 
-        <div
+        {/* <div
           className={
             active === "borrower" ? "dapp-menu-item-special" : "dapp-menu-item"
           }
@@ -59,12 +59,12 @@ function NavContent() {
         >
           <Person2Icon color="primary" />
           <p
-            style={{ color: "rgb(230,179,82)" }}
+            // style={{ color: "rgb(230,179,82)" }}
             className={active === "borrower" ? "text-special" : "text"}
           >
             Borrower Profile
           </p>
-        </div>
+        </div> */}
 
         <div
           className={
@@ -74,7 +74,7 @@ function NavContent() {
         >
           <CurrencyExchangeIcon color="primary" />
           <p
-            style={{ color: "rgb(230,179,82)" }}
+            // style={{ color: "rgb(230,179,82)" }}
             className={active === "invest" ? "text-special" : "text"}
           >
             Invest

@@ -6,7 +6,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import { walletConnect } from "../../../store/slices/account";
 import { RootState } from "../../../store";
 import "./style.scss";
-import Metamask from "../../../assets/icons/metamask.jpeg";
+import Metamask from "../../../assets/icons/metamask.png";
 
 function WalletConnect() {
   const [web3Modal, setWeb3Modal] = useState<null | Web3Modal>(null);
@@ -25,7 +25,7 @@ function WalletConnect() {
 
     const newWeb3Modal = new Web3Modal({
       cacheProvider: true, // very important
-      network: "mainnet",
+      network: "rinkeby",
       providerOptions,
     });
 
@@ -44,7 +44,7 @@ function WalletConnect() {
       walletConnect({
         provider: ethersProvider,
         address: userAddress,
-        networkInfo: network
+        networkInfo: network,
       })
     );
   }

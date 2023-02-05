@@ -5,7 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   paper: {
     background: "#151419",
+<<<<<<< HEAD
     color: "white",
+=======
+>>>>>>> c726fd752ac2b00b216e5e352bd4bb718d25a470
   },
 });
 

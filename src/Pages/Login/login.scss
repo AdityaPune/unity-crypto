@@ -2,26 +2,40 @@
   width: 90%;
   margin: auto;
   margin-top: 64px;
-  .login-header {
-    margin: 15px 10px;
-    .title {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 14px;
-      /* identical to box height, or 58% */
-      color: #000000;
-    }
-  }
   .protocol-stats {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     .stat-box {
-      width: 30rem;
-      height: 60rem;
+      width: 500px;
+      height: 400px;
       margin: 20px;
+      display: "flex";
+      flex-direction: "column";
+      align-items: "center";
+      justify-content: "center";
+      .card-style {
+        background: "#151419";
+        border: "3px solid rgba(28, 163, 174, 0.2)";
+        border-radius: "5px";
+        height: "250px";
+        display: "flex";
+        flex-direction: "column";
+        align-items: "center";
+        justify-content: "center";
+        cursor: "pointer";
+      }
+      .card-style:hover {
+        background: "#0E5B5F";
+        border: "3px solid rgba(28, 163, 174, 0.2)";
+        border-radius: "5px";
+        height: "250px";
+        display: "flex";
+        flex-direction: "column";
+        align-items: "center";
+        justify-content: "center";
+        cursor: "pointer";
+      }
     }
   }
 }

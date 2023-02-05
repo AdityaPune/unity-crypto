@@ -57,8 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 function BorrowerDashboard() {
-
-  const card = (text: string, num:string) => (
+  const card = (text: string, num: string) => (
     <CardContent>
       <Typography style={{ color: "rgb(230,179,82)", fontFamily: "OpenSans" }}>
         {text}
@@ -102,131 +101,136 @@ function BorrowerDashboard() {
     <div className="dashboard-view">
       <div className="dashboard-header">
         <div className="numbers">
-        <div className="protocol-stats">
-          <Box className="stat-box">
-            <Card
-              style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
-              }}
-              variant="outlined"
-            >
-              {card("Total Loan Sanctioned","$120000")}
-            </Card>
-          </Box>
-          <Box className="stat-box">
-            <Card
-              style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
-              }}
-              variant="outlined"
-            >
-              {card("Total interest paid","$1500")}
-            </Card>
-          </Box>
-        </div>
-        <div className="personal-stats">
-          <Box className="stat-box">
-            <Card
-              style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
-              }}
-              variant="outlined"
-            >
-              {card("Interest due next month","$1000")}
-            </Card>
-          </Box>
-          <Box className="stat-box">
-            <Card
-              style={{
-                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
-              }}
-              variant="outlined"
-              className="card"
-            >
-              {card("Particiapted pools","2")}
-            </Card>
-          </Box>
-        </div>
-        {/* <Typography style={{ color: "#3939BF" }} className="title">
+          <div className="protocol-stats">
+            <Box className="stat-box">
+              <Card
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, #4880EC, #019CAD)",
+                }}
+                variant="outlined"
+              >
+                {card("Total Loan Sanctioned", "$120000")}
+              </Card>
+            </Box>
+            <Box className="stat-box">
+              <Card
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, #4880EC, #019CAD)",
+                }}
+                variant="outlined"
+              >
+                {card("Total interest paid", "$1500")}
+              </Card>
+            </Box>
+          </div>
+          <div className="personal-stats">
+            <Box className="stat-box">
+              <Card
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, #4880EC, #019CAD)",
+                }}
+                variant="outlined"
+              >
+                {card("Interest due next month", "$1000")}
+              </Card>
+            </Box>
+            <Box className="stat-box">
+              <Card
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, #4880EC, #019CAD)",
+                }}
+                variant="outlined"
+                className="card"
+              >
+                {card("Particiapted pools", "2")}
+              </Card>
+            </Box>
+          </div>
+          {/* <Typography style={{ color: "#3939BF" }} className="title">
           Your Loans
         </Typography> */}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+        </div>
         <div
-          className="add-button"
-          onClick={() => setShowContent(!showContent)}
-        >
-          <p style={{ color: "rgb(21,20,25)" }}>Sanction New Loan</p>
-        </div>
-        <div className="add-button" onClick={handleOpen}>
-          <p style={{ color: "rgb(21,20,25)" }}>Repay Borrowings</p>
-        </div>
-      </div>
-      <br></br>
-      {open && (
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          className={classes.modal}
-          open={open}
-          onClose={handleClose}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <div className={classes.paper}>
-            <Typography
-              variant="h5"
-              id="transition-modal-title"
-              style={{ color: "#000" }}
-            >
-              Return an amount
-            </Typography>
-            <TextField
-              id="standard-basic"
-              label="Amount"
-              style={{ marginTop: "25px" }}
-              value={value}
-              onChange={handleChange}
-            />
-            <Grid container spacing={1} style={{ marginTop: "15px" }}>
-              <Grid item xs={5} className={classes.item}>
-                <Typography>Pool: UC-210</Typography>
-              </Grid>
-              <Grid item xs={5} className={classes.item}>
-                <Typography>APY: 11.21 %</Typography>
-              </Grid>
-              <Grid item xs={5} className={classes.item}>
-                <Typography>Vesting: 6 months</Typography>
-              </Grid>
-              <Grid item xs={5} className={classes.item}>
-                <Typography>Sector: Agriculture</Typography>
-              </Grid>
-            </Grid>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleSubmit}
-              style={{ marginTop: "20px" }}
-            >
-              Repay
-            </Button>
+          <div
+            className="add-button"
+            onClick={() => setShowContent(!showContent)}
+          >
+            <p style={{ color: "rgb(21,20,25)" }}>Sanction New Loan</p>
           </div>
-        </Modal>
-      )}
-      {showContent && (
-        <div>
-          <SanctionLoan />
+          <div className="add-button" onClick={handleOpen}>
+            <p style={{ color: "rgb(21,20,25)" }}>Repay Borrowings</p>
+          </div>
         </div>
-      )}
+        <br></br>
+        {open && (
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <div className={classes.paper}>
+              <Typography
+                variant="h5"
+                id="transition-modal-title"
+                style={{ color: "#000" }}
+              >
+                Return an amount
+              </Typography>
+              <TextField
+                id="standard-basic"
+                label="Amount"
+                style={{ marginTop: "25px" }}
+                value={value}
+                onChange={handleChange}
+              />
+              <Grid container spacing={1} style={{ marginTop: "15px" }}>
+                <Grid item xs={5} className={classes.item}>
+                  <Typography>Pool: UC-210</Typography>
+                </Grid>
+                <Grid item xs={5} className={classes.item}>
+                  <Typography>APY: 11.21 %</Typography>
+                </Grid>
+                <Grid item xs={5} className={classes.item}>
+                  <Typography>Vesting: 6 months</Typography>
+                </Grid>
+                <Grid item xs={5} className={classes.item}>
+                  <Typography>Sector: Agriculture</Typography>
+                </Grid>
+              </Grid>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+                style={{ marginTop: "20px" }}
+              >
+                Repay
+              </Button>
+            </div>
+          </Modal>
+        )}
+        {showContent && (
+          <div>
+            <SanctionLoan />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

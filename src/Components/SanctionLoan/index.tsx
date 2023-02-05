@@ -62,7 +62,7 @@ export default function SanctionLoan() {
       <Container component="main"  sx={{ mb: 4 }} style={{width:"650px"}}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
-            Sanction A Loan
+            Sanction a loan
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (

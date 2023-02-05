@@ -10,6 +10,25 @@ import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import graph from "../../assets/images/agri.jpg";
 
+import {
+  // Chart as ChartJS,
+  // CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import {CategoryScale} from 'chart.js'; 
+
+import { Line } from "react-chartjs-2";
+// import faker from "@faker-js/faker";
+import {faker} from '@faker-js/faker';
+import { Chart as ChartJS } from 'chart.js/auto'
+// import {faker} from 'faker';
+// const faker = require('@faker-js/faker');
+// Chart.register(CategoryScale);
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
@@ -23,7 +42,26 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     height: "100%",
     width: "100%",
   },
+  "& .MuiTypography-root":{
+    backgroundImage: "linear-gradient(to right, golder rgb(230,179,82), white)"
+  }
 }));
+
+// const BootstrapDialogTitle = styled(DialogTitle)(({ theme }) => ({
+//   "& .MuiTypography-root":{
+//     backgroundImage: "linear-gradient(to right, golder rgb(230,179,82), white)"
+//   }
+// }));
+
+// const BootstrapDialogTitle = 
+// MuiDialogTitle: {
+//       root: {
+//         backgroundColor: theme.palette.primary.main,
+//         '& h6': {
+//           color: 'red'
+//         }
+//       }
+//     }
 
 export interface DialogTitleProps {
   id: string;
@@ -34,7 +72,7 @@ export interface DialogTitleProps {
 function BootstrapDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props;
 
-  return (
+  return (<div style={{backgroundImage: "linear-gradient(to right, rgb(230,179,82), white)" }}>
     <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
       {children}
       {onClose ? (
@@ -52,6 +90,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
         </IconButton>
       ) : null}
     </DialogTitle>
+    </div>
   );
 }
 
@@ -59,11 +98,51 @@ export interface poolProps {
   id: number;
   name: string;
   summary: string;
+  img: string;
 }
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top' as const,
+    },
+    title: {
+      display: true,
+      text: 'Pool growth',
+    },
+  },
+};
+
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: '',
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    }
+  ],
+};
+
+
+
 
 export default function CustomizedDialogs(pool: poolProps) {
   const [open, setOpen] = React.useState(false);
-  const { name, summary, id } = pool;
+  const { name, summary, id, img } = pool;
   //   console.log(name);
   const handleClickOpen = () => {
     setOpen(true);
@@ -75,9 +154,10 @@ export default function CustomizedDialogs(pool: poolProps) {
   return (
     <div>
       <Button size="small" onClick={handleClickOpen}>
-        Open dialog
+        More
       </Button>
       <BootstrapDialog
+      // sx={{ color: 'green' }}
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
@@ -85,23 +165,33 @@ export default function CustomizedDialogs(pool: poolProps) {
         <BootstrapDialogTitle
           id="customized-dialog-title"
           onClose={handleClose}
+          // style={{backgroundImage: "linear-gradient(to right, golder rgb(230,179,82), white)"}}
         >
           {name}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <div style={{ display: "flex", gap: "10px" }}>
-            <div>
-              <img style={{ width: "280px" }} src={graph}></img>
+          <div
+            style={{ display: "flex", gap: "10px", flexDirection: "column" }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height:"215px"
+              }}
+            >
+              <Line options={options} data={data} />
             </div>
-            <div style={{ marginLeft: "40px" }}>
-              <p style={{ marginBottom: "0px" }}>Pool Name:</p>
-              <p style={{ marginTop: "0px" }}>Pool 1</p>
-              <p style={{ marginBottom: "0px" }}>Total active holding:</p>
-              <p style={{ marginTop: "0px" }}>$150k</p>
-              <p style={{ marginBottom: "0px" }}>Total Borrower:</p>
-              <p style={{ marginTop: "0px" }}>25</p>
-              <p style={{ marginBottom: "0px" }}>Pool type:</p>
-              <p style={{ marginTop: "0px" }}>Agriculture</p>
+            <div style={{ marginLeft: "40px", backgroundImage: "linear-gradient(to right, rgb(230,179,82), white)", height: "220px", padding: "10px"}}>
+             <div style={{display:"flex", height:"45px"}}> <p style={{ fontSize:"x-large", fontWeight:"600" }}>Pool Name:</p><p style={{ fontSize:"x-large", marginLeft:"10px" }}> {name}</p></div>
+              
+              <div style={{display:"flex", height:"45px"}}><p style={{ fontSize:"x-large", fontWeight:"600" }}>Total active holding:</p><p style={{ fontSize:"x-large", marginLeft:"10px" }}> $150k</p></div>
+             
+              <div style={{display:"flex", height:"45px"}}><p style={{ fontSize:"x-large", fontWeight:"600" }}>Total Borrower count:</p><p style={{ fontSize:"x-large", marginLeft:"10px" }}> 25</p></div>
+           
+              <div style={{display:"flex", height:"45px"}}><p style={{ fontSize:"x-large", fontWeight:"600" }}>Profit generated:</p><p style={{ fontSize:"x-large", marginLeft:"10px" }}> $1.5k</p></div>
+    
             </div>
           </div>
         </DialogContent>

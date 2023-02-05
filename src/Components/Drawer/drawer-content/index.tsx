@@ -6,12 +6,10 @@ import "./drawer-content.scss";
 import DocsIcon from "../../../assets/icons/stake.svg";
 import classnames from "classnames";
 import { useNavigate } from "react-router-dom";
-import {
-  DashboardIcon,
-  SecurityIcon,
-  PortfolioIcon,
-  BorrowerIcon,
-} from "./icons";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import DataThresholdingIcon from "@mui/icons-material/DataThresholding";
+import Person2Icon from "@mui/icons-material/Person2";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 function NavContent() {
   const [active, setActive] = useState("security");
@@ -30,8 +28,11 @@ function NavContent() {
           }
           onClick={() => navigateToPage("/dashboard")}
         >
-          <DashboardIcon />
-          <p className={active === "dashboard" ? "text-special" : "text"}>
+          <DashboardIcon color="primary" />
+          <p
+            style={{ color: "rgb(230,179,82)" }}
+            className={active === "" ? "text-special" : "text"}
+          >
             Dashboard
           </p>
         </div>
@@ -41,8 +42,11 @@ function NavContent() {
           }
           onClick={() => navigateToPage("/portfolio")}
         >
-          <PortfolioIcon />
-          <p className={active === "portfolio" ? "text-special" : "text"}>
+          <DataThresholdingIcon color="primary" />
+          <p
+            style={{ color: "rgb(230,179,82)" }}
+            className={active === "portfolio" ? "text-special" : "text"}
+          >
             Portfolio Manager
           </p>
         </div>
@@ -53,8 +57,11 @@ function NavContent() {
           }
           onClick={() => navigateToPage("/borrower")}
         >
-          <BorrowerIcon />
-          <p className={active === "borrower" ? "text-special" : "text"}>
+          <Person2Icon color="primary" />
+          <p
+            style={{ color: "rgb(230,179,82)" }}
+            className={active === "borrower" ? "text-special" : "text"}
+          >
             Borrower Profile
           </p>
         </div>
@@ -65,8 +72,11 @@ function NavContent() {
           }
           onClick={() => navigateToPage("/invest")}
         >
-          <SecurityIcon />
-          <p className={active === "invest" ? "text-special" : "text"}>
+          <CurrencyExchangeIcon color="primary" />
+          <p
+            style={{ color: "rgb(230,179,82)" }}
+            className={active === "invest" ? "text-special" : "text"}
+          >
             Invest
           </p>
         </div>

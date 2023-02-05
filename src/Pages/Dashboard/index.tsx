@@ -14,22 +14,17 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import CardMedia from "@mui/material/CardMedia";
-import poolimg from "../../assets/images/agri.jpg";
+import education from "../../assets/images/education.jpg";
+import healthcare from "../../assets/images/healthcare.jpg";
+import retail from "../../assets/images/retail.jpg";
+import agri from "../../assets/images/agri.jpg";
 import CustomizedDialogs from "./dialog";
-// import Grid from "@material-ui/core/Grid";
-
 import "./dashboard.scss";
-// import { useWeb3Context } from "../../hooks";
-
-import { Skeleton } from "@material-ui/lab";
 import classnames from "classnames";
 import ProductList from "../../Components/ProductList";
 import { styled } from "@mui/material/styles";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
-// import { FaEllipsisH } from "react-icons/fa";
-
-// import _ from '../../assets/images/agri.jpg'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -40,17 +35,17 @@ export const data = {
       label: "# of Votes",
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
+        "rgb(127, 42, 135)",
+        "rgba(178, 73, 147)",
+        "rgba(249, 157, 158)",
         "rgba(75, 192, 192, 0.2)",
         "rgba(153, 102, 255, 0.2)",
         "rgba(255, 159, 64, 0.2)",
       ],
       borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
+        "rgba(0, 111, 255, 1)",
+        "rgba(178, 73, 147, 1)",
+        "rgba(249, 157, 158, 1)",
         "rgba(75, 192, 192, 1)",
         "rgba(153, 102, 255, 1)",
         "rgba(255, 159, 64, 1)",
@@ -60,17 +55,17 @@ export const data = {
   ],
 };
 
+
+
 function Dashboard() {
   const dispatch = useDispatch();
-  //   const { provider, address, connect, chainID, checkWrongNetwork } =
-  //     useWeb3Context();
 
   const card = (text: string) => (
     <CardContent>
-      <Typography style={{ color: "#4B584D", fontFamily: "OpenSans" }}>
+      <Typography style={{ color: "rgb(230,179,82)", fontFamily: "OpenSans" }}>
         {text}
       </Typography>
-      <Typography variant="h5" component="div">
+      <Typography style={{color:"white"}} variant="h5" component="div">
         $12,000,000.00
       </Typography>
     </CardContent>
@@ -79,54 +74,79 @@ function Dashboard() {
   const pooldata = [
     {
       id: 1,
-      name: "pool1",
+      name: "Agriculture",
       summary: "Summary about pool agenda, type, total amount and risk.",
+      img: agri,
     },
     {
       id: 2,
-      name: "pool2",
+      name: "Education",
       summary: "Summary about pool agenda, type, total amount and risk.",
+      img: education,
     },
     {
       id: 3,
-      name: "pool3",
+      name: "Healthcare",
       summary: "Summary about pool agenda, type, total amount and risk.",
+      img: healthcare,
     },
     {
       id: 4,
-      name: "pool4",
+      name: "Retail",
       summary: "Summary about pool agenda, type, total amount and risk.",
+      img: retail,
     },
   ];
-
-  // const Card = styled(card)(({ theme }) => ({
-  //   "& .MuiPaper-root": {
-  //     padding: theme.spacing(2),
-  //     // height: "100%",
-  //     width: "33%",
-  //   }
-  // }));
 
   return (
     <div className="dashboard-view">
       <div className="dashboard-header">
-        <Typography className="title">Lending Marketplace</Typography>
+        <Typography style={{ color: "rgb(230,179,82)" }} className="title">
+          Lending Marketplace
+        </Typography>
       </div>
       <div className="numbers">
         <div className="protocol-stats">
           <Box className="stat-box">
-            <Card variant="outlined">{card("Total Value Locked")}</Card>
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+            >
+              {card("Total Value Locked")}
+            </Card>
           </Box>
           <Box className="stat-box">
-            <Card variant="outlined">{card("Loan Originated")}</Card>
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+            >
+              {card("Loan Originated")}
+            </Card>
           </Box>
         </div>
         <div className="personal-stats">
           <Box className="stat-box">
-            <Card variant="outlined">{card("Portfolio Balance")}</Card>
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+            >
+              {card("Portfolio Balance")}
+            </Card>
           </Box>
           <Box className="stat-box">
-            <Card variant="outlined" className="card">
+            <Card
+              style={{
+                backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)",
+              }}
+              variant="outlined"
+              className="card"
+            >
               {card("USDC Locked")}
             </Card>
           </Box>
@@ -141,15 +161,23 @@ function Dashboard() {
           justifyContent: "center",
         }}
       >
-        <div style={{ width: "25%", marginRight: "140px" }}>
-          <Card sx={{ maxWidth: 345 }}>
-            <Pie style={{ height: "200px", width: "200px" }} data={data} />
+        <div
+          style={{
+            width: "40%",
+            marginRight: "0px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          <Card style={{ background: "rgb(21,20,25)" }} sx={{ maxWidth: 345 }}>
+            <Pie style={{ height: "300px", width: "200px" }} data={data} />
           </Card>
-          <Card sx={{ maxWidth: 345 }}>
-            <Pie style={{ height: "200px", width: "200px" }} data={data} />
+          <Card style={{ background: "rgb(21,20,25)" }} sx={{ maxWidth: 345 }}>
+            <Pie style={{ height: "250px", width: "200px" }} data={data} />
           </Card>
         </div>
-        <div className="pooldiv" style={{ width: "50%", marginLeft: "140px" }}>
+        <div className="pooldiv" style={{ width: "50%", marginLeft: "40px" }}>
           <Grid container spacing={1}>
             {pooldata.map((data, i) => {
               return (
@@ -158,7 +186,8 @@ function Dashboard() {
                   <Card sx={{ maxWidth: 345 }}>
                     <CardMedia
                       sx={{ height: 140 }}
-                      image={poolimg}
+                      image={data.img}
+                      src="../../assets/images/agri.jpg"
                       title="green iguana"
                     />
                     <CardContent>
@@ -174,6 +203,7 @@ function Dashboard() {
                         id={data.id}
                         name={data.name}
                         summary={data.summary}
+                        img={data.img}
                       ></CustomizedDialogs>
                     </CardActions>
                   </Card>

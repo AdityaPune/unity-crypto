@@ -1,3 +1,44 @@
+// .dashboard-view {
+//   width: 90%;
+//   margin: auto;
+//   margin-top: 64px;
+
+//   .dashboard-header {
+//     margin: 15px 10px;
+//     .title {
+//       font-family: "Open Sans";
+//       font-style: normal;
+//       font-weight: 600;
+//       font-size: 24px;
+//       line-height: 14px;
+//       /* identical to box height, or 58% */
+
+//       color: #000000;
+//     }
+//   }
+
+//   .add-button {
+//     background: #ffffff;
+//     border: 1px solid rgba(28, 163, 174, 0.2);
+//     border-radius: 6px;
+//     height: 35px;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 3px 18px;
+//     width: 300px;
+//     text-align: center;
+//     margin: 0 auto;
+//     cursor: pointer;
+
+//     .add-button-text {
+//       color: black;
+//       font-weight: 500;
+//     }
+//   }
+// }
+
 .dashboard-view {
   width: 90%;
   margin: auto;
@@ -16,9 +57,39 @@
       color: #000000;
     }
   }
+  .numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 25px 10px 40px 10px;
+    .protocol-stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      .stat-box {
+        width: 15rem;
+        margin-right: 1rem;
+        // background-color: black;
+      }
+    }
+    .personal-stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      .stat-box {
+        width: 15rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+.pooldiv {
+  display: flex;
+  gap: 10px;
+}
 
-  .add-button {
-    background: #ffffff;
+.add-button {
+    background: rgb(230,179,82);
     border: 1px solid rgba(28, 163, 174, 0.2);
     border-radius: 6px;
     height: 35px;
@@ -31,10 +102,4 @@
     text-align: center;
     margin: 0 auto;
     cursor: pointer;
-
-    .add-button-text {
-      color: black;
-      font-weight: 500;
-    }
-  }
 }

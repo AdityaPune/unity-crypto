@@ -27,7 +27,8 @@
       justify-content: flex-start;
       .stat-box {
         width: 15rem;
-        margin-right: 5rem;
+        margin-right: 1rem;
+        // background-color: black;
       }
     }
     .personal-stats {
@@ -36,7 +37,7 @@
       justify-content: flex-end;
       .stat-box {
         width: 15rem;
-        margin-left: 5rem;
+        margin-left: 1rem;
       }
     }
   }

@@ -19,67 +19,101 @@ function NavContent() {
     setActive(route.substring(1));
   };
 
+  const check = localStorage.getItem("borrower");
+
   return (
     <div className="dapp-sidebar">
       <div className="dapp-nav">
-        <div
-          className={
-            active === "dashboard" ? "dapp-menu-item-special" : "dapp-menu-item"
-          }
-          onClick={() => navigateToPage("/dashboard")}
-        >
-          <DashboardIcon color="primary" />
-          <p
-            style={{ color: "rgb(230,179,82)" }}
-            className={active === "" ? "text-special" : "text"}
+        {check === "true" ? (
+          <div
+            className={
+              active === "dashboard"
+                ? "dapp-menu-item-special"
+                : "dapp-menu-item"
+            }
+            onClick={() => navigateToPage("/borrowerDash")}
           >
-            Dashboard
-          </p>
-        </div>
-        <div
-          className={
-            active === "portfolio" ? "dapp-menu-item-special" : "dapp-menu-item"
-          }
-          onClick={() => navigateToPage("/portfolio")}
-        >
-          <DataThresholdingIcon color="primary" />
-          <p
-            style={{ color: "rgb(230,179,82)" }}
-            className={active === "portfolio" ? "text-special" : "text"}
+            <DashboardIcon color="primary" />
+            <p
+              style={{ color: "rgb(230,179,82)" }}
+              className={active === "" ? "text-special" : "text"}
+            >
+              Dashboard
+            </p>
+          </div>
+        ) : (
+          <div
+            className={
+              active === "dashboard"
+                ? "dapp-menu-item-special"
+                : "dapp-menu-item"
+            }
+            onClick={() => navigateToPage("/dashboard")}
           >
-            Portfolio Manager
-          </p>
-        </div>
+            <DashboardIcon color="primary" />
+            <p
+              style={{ color: "rgb(230,179,82)" }}
+              className={active === "" ? "text-special" : "text"}
+            >
+              Dashboard
+            </p>
+          </div>
+        )}
 
-        <div
-          className={
-            active === "borrower" ? "dapp-menu-item-special" : "dapp-menu-item"
-          }
-          onClick={() => navigateToPage("/borrower")}
-        >
-          <Person2Icon color="primary" />
-          <p
-            style={{ color: "rgb(230,179,82)" }}
-            className={active === "borrower" ? "text-special" : "text"}
+        {check !== "true" && (
+          <div
+            className={
+              active === "portfolio"
+                ? "dapp-menu-item-special"
+                : "dapp-menu-item"
+            }
+            onClick={() => navigateToPage("/portfolio")}
           >
-            Borrower Profile
-          </p>
-        </div>
+            <DataThresholdingIcon color="primary" />
+            <p
+              style={{ color: "rgb(230,179,82)" }}
+              className={active === "portfolio" ? "text-special" : "text"}
+            >
+              Portfolio Manager
+            </p>
+          </div>
+        )}
 
-        <div
-          className={
-            active === "invest" ? "dapp-menu-item-special" : "dapp-menu-item"
-          }
-          onClick={() => navigateToPage("/invest")}
-        >
-          <CurrencyExchangeIcon color="primary" />
-          <p
-            style={{ color: "rgb(230,179,82)" }}
-            className={active === "invest" ? "text-special" : "text"}
+        {check === "true" && (
+          <div
+            className={
+              active === "borrower"
+                ? "dapp-menu-item-special"
+                : "dapp-menu-item"
+            }
+            onClick={() => navigateToPage("/borrower")}
           >
-            Invest
-          </p>
-        </div>
+            <Person2Icon color="primary" />
+            <p
+              style={{ color: "rgb(230,179,82)" }}
+              className={active === "borrower" ? "text-special" : "text"}
+            >
+              Borrower Profile
+            </p>
+          </div>
+        )}
+
+        {check !== "true" && (
+          <div
+            className={
+              active === "invest" ? "dapp-menu-item-special" : "dapp-menu-item"
+            }
+            onClick={() => navigateToPage("/invest")}
+          >
+            <CurrencyExchangeIcon color="primary" />
+            <p
+              style={{ color: "rgb(230,179,82)" }}
+              className={active === "invest" ? "text-special" : "text"}
+            >
+              Invest
+            </p>
+          </div>
+        )}
       </div>
 
       {/* <Social /> */}

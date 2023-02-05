@@ -19,7 +19,7 @@ import SanctionLoan from "../../Components/SanctionLoan";
 
 function BorrowerDashboard() {
 
-  const card = (text: string, num:number) => (
+  const card = (text: string, num:string) => (
     <CardContent>
       <Typography style={{ color: "rgb(230,179,82)", fontFamily: "OpenSans" }}>
         {text}
@@ -53,7 +53,7 @@ function BorrowerDashboard() {
               }}
               variant="outlined"
             >
-              {card("Total Loan Sanctioned",0)}
+              {card("Total Loan Sanctioned","$120000")}
             </Card>
           </Box>
           <Box className="stat-box">
@@ -63,7 +63,7 @@ function BorrowerDashboard() {
               }}
               variant="outlined"
             >
-              {card("Total interest paid",0)}
+              {card("Total interest paid","$1500")}
             </Card>
           </Box>
         </div>
@@ -75,7 +75,7 @@ function BorrowerDashboard() {
               }}
               variant="outlined"
             >
-              {card("Interest due next month",0)}
+              {card("Interest due next month","$1000")}
             </Card>
           </Box>
           <Box className="stat-box">
@@ -86,7 +86,7 @@ function BorrowerDashboard() {
               variant="outlined"
               className="card"
             >
-              {card("Particiapted pools",2)}
+              {card("Particiapted pools","2")}
             </Card>
           </Box>
         </div>

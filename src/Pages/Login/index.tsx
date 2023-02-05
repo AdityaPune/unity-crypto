@@ -23,8 +23,8 @@ import "./login.scss";
 // import { useWeb3Context } from "../../hooks";
 const useStyles = makeStyles({
   paper: {
-    background: "#fff",
-    border: "5px solid rgba(230,179,82)",
+    background: "#fff !important",
+    border: "5px solid rgba(230,179,82) !important",
     borderRadius: "15px",
     height: "250px",
     display: "flex",
@@ -33,14 +33,14 @@ const useStyles = makeStyles({
     justifyContent: "center",
     cursor: "pointer",
     "&:hover": {
-      background: "#000",
-      border: "5px solid #fff",
+      background: "#000 !important",
+      border: "5px solid #fff !important",
       color: "#fff",
     },
   },
   papertwo: {
-    background: "rgba(230,179,82)",
-    border: "5px solid #fff",
+    background: "rgba(230,179,82) !important",
+    border: "5px solid #fff !important",
     borderRadius: "15px",
     height: "250px",
     display: "flex",
@@ -49,8 +49,8 @@ const useStyles = makeStyles({
     justifyContent: "center",
     cursor: "pointer",
     "&:hover": {
-      background: "#000",
-      border: "5px solid rgba(230,179,82)",
+      background: "#000 !important",
+      border: "5px solid rgba(230,179,82) !important",
       color: "#fff",
     },
   },

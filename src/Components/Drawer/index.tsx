@@ -4,7 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   paper: {
-    background: "#151419",
+    background: "#151419 !important",
+    borderRight: "3px solid #212025 !important",
   },
 });
 
